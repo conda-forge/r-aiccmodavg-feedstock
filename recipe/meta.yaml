@@ -1,4 +1,4 @@
-{% set version = '2.2-2' %}
+{% set version = "2.3-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/AICcmodavg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/AICcmodavg/AICcmodavg_{{ version }}.tar.gz
-  sha256: ca02867fceaf41507a4bbe6635d25982019d9831957286198965f2cac3a0ed4e
+  sha256: 4d6bcff3c549be9dcefdd849b239659618fdaf9ba0d27b9d0589620d104e5e24
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -53,21 +53,13 @@ test:
 about:
   home: https://CRAN.R-project.org/package=AICcmodavg
   license: GPL-2.0-only
-  summary: Functions to implement model selection and multimodel inference based on Akaike's
-    information criterion (AIC) and the second-order AIC (AICc), as well as their quasi-likelihood
-    counterparts (QAIC, QAICc) from various model object classes.  The package implements
-    classic model averaging for a given parameter of interest or predicted values, as
-    well as a shrinkage version of model averaging parameter estimates or effect sizes.  The
-    package includes diagnostics and goodness-of-fit statistics for certain model types
-    including those of 'unmarkedFit' classes estimating demographic parameters after
-    accounting for imperfect detection probabilities.  Some functions also allow the
-    creation of model selection tables for Bayesian models of the 'bugs', 'rjags', and
-    'jagsUI' classes.  Functions also implement model selection using BIC.  Objects
-    following model selection and multimodel inference can be formatted to LaTeX using
-    'xtable' methods included in the package.
+  summary: Functions to implement model selection and multimodel inference based on Akaike's information criterion (AIC) and the second-order AIC (AICc), as well as their quasi-likelihood counterparts (QAIC, QAICc) from various model object classes.  The package implements classic model averaging for a given parameter of
+    interest or predicted values, as well as a shrinkage version of model averaging parameter estimates or effect sizes.  The package includes diagnostics and goodness-of-fit statistics for certain model types including those of 'unmarkedFit' classes estimating demographic parameters after accounting for imperfect detection
+    probabilities.  Some functions also allow the creation of model selection tables for Bayesian models of the 'bugs', 'rjags', and 'jagsUI' classes.  Functions also implement model selection using BIC.  Objects following model selection and multimodel inference can be formatted to LaTeX using 'xtable' methods included
+    in the package.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
