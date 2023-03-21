@@ -1,4 +1,4 @@
-{% set version = "2.3-1" %}
+{% set version = "2.3-2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/AICcmodavg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/AICcmodavg/AICcmodavg_{{ version }}.tar.gz
-  sha256: d0517da15a38e9b1df20fa73f5342b586624e65792d266e7dff278ad7fc458b0
+  sha256: 899e5edb0858c218184d01b7de32dee991090c6593ee60669767b96b7037f353
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
